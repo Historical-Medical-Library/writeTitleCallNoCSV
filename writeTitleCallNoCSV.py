@@ -1,5 +1,6 @@
 import os
 import csv
+from bs4 import BeautifulSoup as bs
 
 directory = 'path/to/marcxmlfiles'
 fileout = 'path/to/whereyouwanttowriteCSV'
