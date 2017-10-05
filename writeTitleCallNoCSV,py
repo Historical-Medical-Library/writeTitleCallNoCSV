@@ -23,7 +23,7 @@ for file in os.listdir('H:/Library/ArchivesSpace/cpparchives.org_MARCXML'):
     titleCallNoArray.append([title,callNo])
 	#writes title and call number array to CSV
 
-	with open('C:/Users/tdahn/Desktop/FindingAidTitleCallNo.csv', 'w', newline='', encoding='utf8') as f:
+    with open('C:/Users/tdahn/Desktop/FindingAidTitleCallNo.csv', 'w', newline='', encoding='utf8') as f:
     writer = csv.writer(f)
     for row in titleCallNoArray:
         writer.writerow(row)
