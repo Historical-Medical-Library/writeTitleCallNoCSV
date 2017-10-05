@@ -31,4 +31,4 @@ for file in os.listdir(directory):
     writer = csv.writer(f)
     for row in titleCallNoArray:
         writer.writerow(row)
-f.close()
+    f.close()
