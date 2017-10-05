@@ -25,8 +25,8 @@ for file in os.listdir(directory):
     callNo = str(findCallNo)[19:-11]
     title = str(findTitle)[19:-11]
     titleCallNoArray.append([title,callNo])
-	#writes title and call number array to CSV
 
+    #writes title and call number array to CSV
     with open(fileout, 'w', newline='', encoding='utf8') as f:
     writer = csv.writer(f)
     for row in titleCallNoArray:
