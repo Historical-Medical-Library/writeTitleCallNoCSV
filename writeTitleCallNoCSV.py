@@ -2,10 +2,14 @@ import os
 import csv
 from bs4 import BeautifulSoup as bs
 
+#enter the location of your files and where you want the spreadsheet to be written here
+directory = 'path/to/MARCXMLfiles'
+outputDir = 'path/to/where/spreadsheet/will/be/written'
+
 #creates an array with title and call number for each finding aid
 titleCallNoArray = []
-for file in os.listdir('H:/Library/ArchivesSpace/cpparchives.org_MARCXML'):
-	xmlTemp = open(('H:/Library/ArchivesSpace/cpparchives.org_MARCXML/' + file), 'r', encoding='utf8')
+for file in os.listdir(directory):
+	xmlTemp = open((directory + file), 'r', encoding='utf8')
 	xmlString = xmlTemp.read()
 	xmlTemp.close()
     
@@ -24,7 +28,7 @@ for file in os.listdir('H:/Library/ArchivesSpace/cpparchives.org_MARCXML'):
 	titleCallNoArray.append([title,callNo])
 	
 	#writes title and call number array to CSV
-	with open('C:/Users/tdahn/Desktop/FindingAidTitleCallNo.csv', 'w', newline='', encoding='utf8') as f:
+	with open(outputDir, 'w', newline='', encoding='utf8') as f:
 		writer = csv.writer(f)
 		for row in titleCallNoArray:
 			writer.writerow(row)
